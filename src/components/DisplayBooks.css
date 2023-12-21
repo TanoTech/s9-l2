@@ -11,7 +11,7 @@ h1 {
 
 .card {
     border: 2px solid #800000;
-    height: 70vh;
+    width: auto;
     img{
         height: 40vh;
     }

@@ -5,12 +5,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 function navbar() {
   return (
     <Navbar expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"><img src="/assets/imgs/forTheHorde.webp" alt="" /></Navbar.Brand>
+        <Navbar.Brand as={Link}><img src="/assets/imgs/forTheHorde.webp" alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,13 +19,13 @@ function navbar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link as={Link} to='/'>Home</Nav.Link>
             <NavDropdown title="Generi" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#">Fantasy</NavDropdown.Item>
-              <NavDropdown.Item href="#">History</NavDropdown.Item>
-              <NavDropdown.Item href="#">Horror</NavDropdown.Item>
-              <NavDropdown.Item href="#">Romance</NavDropdown.Item>
-              <NavDropdown.Item href="#">Scifi</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/fantasy'>Fantasy</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/history'>History</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/horror'>Horror</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/romance'>Romance</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/scifi'>Scifi</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
